@@ -1,11 +1,8 @@
 FROM ubuntu:trusty
-MAINTAINER Justin Menga <justin.menga@gmail.com>
+MAINTAINER Nick Hultz <nhultz328@gmail.com>
 
 # Prevent dpkg errors
 ENV TERM=xterm-256color
-
-# Set mirrors to NZ
-# RUN sed -i "s/http:\/\/archive./http:\/\/nz.archive./g" /etc/apt/sources.list 
 
 # Install node.js
 RUN apt-get update && \
@@ -21,4 +18,4 @@ RUN npm install -g grunt-cli && \
     npm install --unsafe-perm=true
 
 # Set entrypoint
-CMD ["node","app.js"]
+CMD ["node", "app.js"]
